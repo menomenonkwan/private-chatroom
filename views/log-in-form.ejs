@@ -1,0 +1,41 @@
+<% layout('layout') -%>
+
+<div class="container">
+  <form method="POST" action="/log-in" >
+    <h2><i class="fa fa-lock" aria-hidden="true"></i></h2>
+    <h1>Log In</h1>
+    <fieldset>
+      <legend>Username:</legend>
+      <input 
+        type="text"
+        name="username"
+        id="username"
+        minlength="3"
+        maxlength="50"
+        value="<%= typeof user == 'undefined' ? '' : user %>"
+      />
+    </fieldset>
+
+    <fieldset>
+      <legend>Password:</legend>
+      <input 
+        type="password"
+        name="password"
+        id="password"
+        minlength="8"
+        maxlength="50"
+      />
+    </fieldset>
+
+    <button type="submit" class="btn">Submit</button>
+  </form>
+  
+  <a class="cancel btn" href="<%= '/' %>">Cancel</a>
+
+  <% if (typeof errors != 'undefined') { %>
+    <ul class="errors">
+      <% errors.forEach(err => { %>
+      <li><%= err.msg %></li>
+      <% }) %>
+    </ul>
+    <% } %>

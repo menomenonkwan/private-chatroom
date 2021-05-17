@@ -1,0 +1,76 @@
+<% layout('layout') -%>
+<div class="container"> 
+  <% if (currentUser) {%>
+    <h1><%= title %></h1>
+    <p><%= currentUser.username %></p>
+  
+    <div class="message-grid">
+      <% if (posts.length > 0) { %>
+  
+        <% posts.forEach(post => { %>
+          <div class="card">
+            <h3 class="name">
+              <%= post.member.firstname %> <%= post.member.lastname %> 
+              <span class="handle">@<%= post.member.username %></span>
+              <% if(currentUser.admin) { %>
+                <form action="/posts/delete/<%= post._id %>" method="POST" class="delete-form">
+                  <input
+                    type="hidden"
+                    name="post"
+                    id="post"
+                    value="<%= post._id %>"
+                    required
+                  />
+                  <button type="submit" class="delete">
+                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                  </button>
+                </form>  
+              <% } else if(currentUser._id.toString() === post.member._id.toString()) { %>
+                <form action="/posts/delete/<%= post._id %>" method="POST" class="delete-form">
+                  <input
+                    type="hidden"
+                    name="post"
+                    id="post"
+                    value="<%= post._id %>"
+                    required
+                  />
+                  <button type="submit" class="delete">
+                    <i class="fa fa-trash-o" aria-hidden="true"></i>
+                  </button>
+                </form>  
+              <% } %>
+            </h3>
+            <h4 class="title"><%= post.title %></h4>
+            <p class="post"><%= post.post %></p>
+            <p class="date"><%= post.date_formatted %></p>
+          </div>
+        <% }) %>      
+  
+      <% } else { %>
+        <p>There are no posts</p>
+      <% } %>
+
+  <% } else { %>  
+
+    <h1>WELCOME</h1>
+    <p>sign in to view</p>
+    <div class="message-grid">
+      <% if (posts.length > 0) { %>
+  
+        <% posts.forEach(post => { %>
+          <div class="card">
+            <h3 class="name"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <%= makePrivateQ(post.member.lastname) %> <span class="handle">@<%= post.member.username %></span></h3>
+            <h4 class="title"><%= makePrivateX(post.title) %></h4>
+            <p class="post"><%= makePrivateX(post.post) %></p>
+            <p class="date"><%= post.date_formatted %></p>
+          </div>
+        <% }) %>      
+  
+      <% } else { %>
+        <p>There are no posts</p>
+      <% } %>    
+
+  </div>  
+
+  <% } %>  
+</div>

@@ -1,0 +1,279 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+
+:root {
+  --blue: #a0d2eb;
+  --white: #e5eaf5;
+  --light-purple: #d0bdf4;
+  --purple: #8458b3;
+  --dark-purple: #494d5f;
+  --opac: #494d5fcf;
+  --opac-white: #e5eafedf;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: 14px "Montserrat", Helvetica, Arial, sans-serif;
+  background-color: var(--purple);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 800'%3E%3Cg %3E%3Ccircle fill='%238458b3' cx='400' cy='400' r='600'/%3E%3Ccircle fill='%237875c9' cx='400' cy='400' r='500'/%3E%3Ccircle fill='%23718fd8' cx='400' cy='400' r='400'/%3E%3Ccircle fill='%2375a7e1' cx='400' cy='400' r='300'/%3E%3Ccircle fill='%2385bee7' cx='400' cy='400' r='200'/%3E%3Ccircle fill='%23a0d2eb' cx='400' cy='400' r='100'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+header {
+  background: var(--opac);
+  padding: 20px;
+  margin: auto;
+  max-width: 1200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.banner {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  color: var(--white);
+}
+.banner h1 {
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
+  padding: 5px 0;
+}
+.banner a {
+  text-decoration: none;
+  color: var(--white);
+}
+.banner a:hover {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+nav ul {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+nav li {
+  padding: 10px;
+}
+nav a {
+  padding: 10px;
+  background: var(--purple);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: 3px;
+  -webkit-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+nav a:hover {
+  color: var(--blue);
+  -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.75);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.75);
+}
+footer {
+  text-align: center;
+  width: 100%;
+  padding: 20px;
+  color: var(--dark-purple);
+}
+
+/* POST GRID  */
+.container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 50px 0;
+  text-align: center;
+}
+.message-grid {
+  max-width: 1200px;
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin: 25px auto;
+}
+.card {
+  border-left: 10px solid var(--purple);
+  background: var(--opac-white);
+  padding: 10px;
+  border-radius: 5px;
+  -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  text-align: left;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.name {
+  background: var(--dark-purple);
+  border-radius: 2px;
+  color: var(--white);
+  padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.handle {
+  color: var(--light-purple);
+  font-weight: 300;
+  margin-left: 5px;
+}
+.title {
+  color: var(--purple);
+  margin: 5px 0;
+  font-size: 1rem;
+}
+.date {
+  font-size: 0.7rem;
+  margin: 10px 0;
+  text-align: right;
+  font-style: italic;
+}
+.card:hover {
+  -webkit-box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.75);
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.75);
+  border-left: 10px solid var(--blue);
+}
+form.delete-form {
+  margin: 0 0 0 auto;
+}
+.delete {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 1rem;
+  -webkit-transition: -webkit-transform 0.25s ease;
+  transition: -webkit-transform 0.25s ease;
+  -o-transition: transform 0.25s ease;
+  transition: transform 0.25s ease;
+  transition: transform 0.25s ease, -webkit-transform 0.25s ease;
+}
+.delete:hover {
+  -webkit-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  transform: scale(1.5);
+  cursor: pointer;
+  color: var(--blue);
+}
+/* form */
+form {
+  max-width: 500px;
+  margin: auto;
+}
+form h2 {
+  text-align: center;
+}
+fieldset {
+  margin-top: 10px;
+  border: none;
+}
+legend {
+  text-align: left;
+}
+input,
+textarea {
+  border-width: 0 0 0 10px;
+  border-style: solid;
+  border-color: transparent;
+  outline: transparent;
+  width: 100%;
+  border-radius: 3px;
+  padding: 10px;
+  font-size: 16px;
+  font-family: inherit;
+}
+input:focus,
+textarea:focus {
+  border-color: var(--purple);
+  -webkit-box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
+}
+.btn {
+  font-family: inherit;
+  padding: 10px;
+  background: var(--dark-purple);
+  color: var(--white);
+  border-radius: 3px;
+  border: none;
+  margin: 25px auto;
+  width: 100%;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
+  background: var(--purple);
+}
+.cancel {
+  text-decoration: none;
+  background: transparent;
+  color: var(--purple);
+}
+.cancel:hover {
+  color: var(--white);
+}
+
+.member-list {
+  max-width: 500px;
+  margin: auto;
+}
+.member-card {
+  margin: 5px 0;
+  padding: 5px;
+  background: var(--opac);
+}
+
+/* ERRORS */
+.errors {
+  color: red;
+}
+.errors li {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 5px;
+}
+.example {
+  display: -ms-grid;
+  display: grid;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(white),
+    to(black)
+  );
+  background: -o-linear-gradient(top, white, black);
+  background: linear-gradient(to bottom, white, black);
+}

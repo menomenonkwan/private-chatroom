@@ -1,0 +1,87 @@
+<% layout('layout') -%>
+
+<div class="container">
+  <form method="POST" action="">
+    <h2><i class="fa fa-user-circle-o" aria-hidden="true"></i></h2>
+    <h1>Sign Up</h1>
+    <fieldset>
+      <legend>Username *</legend>
+      <input 
+        type="text"
+        name="username"
+        id="username"
+        minlength="3"
+        maxlength="50"
+        required
+        value="<%= typeof username == 'undefined' ? '' : username %>"
+      />
+    </fieldset>
+    <fieldset>
+      <legend>First Name *</legend>
+      <input 
+        type="text"
+        name="firstname"
+        id="firstname"
+        minlength="1"
+        maxlength="25"
+        value="<%= typeof firstname == 'undefined' ? '' : firstname %>"
+        required
+      />
+    </fieldset>
+    <fieldset>
+      <legend>Last Name *:</legend>
+      <input 
+        type="text"
+        name="lastname"
+        id="lastname"
+        minlength="1"
+        maxlength="25"
+        required
+        value="<%= typeof lastname == 'undefined' ? '' : lastname %>"
+      />
+    </fieldset>
+    <fieldset>
+      <legend>Password *</legend>
+      <input 
+        type="password"
+        name="password"
+        id="password"
+        minlength="8"
+        maxlength="50"
+        required
+      />
+    </fieldset>
+    <fieldset>
+      <legend>Re-Enter Password *</legend>
+      <input 
+        type="password"
+        name="confirm-password"
+        id="confirm-password"
+        minlength="8"
+        maxlength="50"
+        required
+      />
+    </fieldset>
+    <fieldset>
+      <legend>Inner Circle Secret Password *</legend>
+      <input 
+        type="text"
+        name="secret"
+        id="secret"
+        maxlength="50"
+        placeholder="input secret password for approval..."
+      />
+    </fieldset>
+    <button type="submit" class="btn">Submit</button>
+  </form>
+  <a class="cancel btn" href="<%= '/' %>">Cancel</a>
+
+  <% if (typeof errors != 'undefined') { %>
+    <ul class="errors">
+      <% errors.forEach(err => { %>
+      <li><%= err.msg %></li>
+      <% }) %>
+    </ul>
+    <% } %>
+</div>
+</html>
